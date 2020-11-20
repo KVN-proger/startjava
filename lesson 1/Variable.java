@@ -17,7 +17,7 @@ public class Variable {
 		System.out.println("Amount of SSD - " + ssd);
 		System.out.println("CPU Ratio - " + cpuRatio);
 		System.out.println("CPU Voltage - " + cpuVoltage);
-		System.out.println("Brand of the CPU - " + a+m+d);
+		System.out.println("Brand of the CPU - " + a + m + d);
 		System.out.println("Presence IDE- " + presenceIde);
 	}
 }
