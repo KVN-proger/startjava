@@ -3,24 +3,24 @@ public class Cycle {
 		for (int i = 0; i < 21; i++) {
 			System.out.println("numbers from 0 to 20 - " + i);
 		}
+
 		int x = 8;
 		while(x > - 6) {
-			x = x - 2;
+			x -= 2;
 			System.out.println("numbers from 6 to - 6 - " + x);
 		}
+
 		int y = 10;
 		int z = 0;
 		int result = 0;
 		do {
-			y = y + 1;
+			y++;
 			if(y % 2 != 0) {
 				z = z + y;
 				result = z;
-					if (result > 60) {
-						System.out.println("sum of odd numbers from 10 to 20 - " + result);
-					}
+				System.out.println("sum of odd numbers from 10 to 20 - " + result);
 			}
-		}while(y <20);
+		} while(y < 20);
 
 	}
 }
