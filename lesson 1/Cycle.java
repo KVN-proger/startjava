@@ -11,16 +11,15 @@ public class Cycle {
 		}
 
 		int y = 10;
-		int z = 0;
 		int result = 0;
 		do {
 			y++;
 			if(y % 2 != 0) {
-				z = z + y;
-				result = z;
-				System.out.println("sum of odd numbers from 10 to 20 - " + result);
+				result = result + y;
+				if(result == 75) {
+					System.out.println("sum of odd numbers from 10 to 20 - " + result);
+				}
 			}
 		} while(y < 20);
-
 	}
 }
