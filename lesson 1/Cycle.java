@@ -15,11 +15,9 @@ public class Cycle {
 		do {
 			y++;
 			if(y % 2 != 0) {
-				result = result + y;
-				if(result == 75) {
-					System.out.println("sum of odd numbers from 10 to 20 - " + result);
-				}
+				result += y;
 			}
 		} while(y < 20);
+		System.out.println("sum of odd numbers from 10 to 20 -" + result);
 	}
 }
