@@ -5,9 +5,9 @@ public class Calculator {
 		int result = 0;
 		char mathSign;
 
-		char [] mathSigns = {'+', '-', '*', '/', '^', '%'};
+		char[] mathSigns = {'+', '-', '*', '/', '^', '%'};
 
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < mathSigns.length; i++) {
 			mathSign = mathSigns[i];
 
 			if (mathSign == '+') {
@@ -39,10 +39,12 @@ public class Calculator {
 			}
 
 			if (mathSign == '^') {
-				result = x * x;
-				System.out.println("exponentiation 2 number " + x + " = " + result);
-				result = y * y;
-				System.out.println("exponentiation 2 number " + y + " = " + result);
+				result = 1;
+				for (int a = 0; a < y; a++){
+					result *= x;
+				}
+				System.out.println("exponentiation " + y + " number " + x + " = " + result);
+
 			} else {
 				System.out.println("the exponentiation operation is not selected");
 			}
