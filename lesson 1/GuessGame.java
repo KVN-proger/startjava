@@ -9,18 +9,18 @@ public class GuessGame {
 			guessNumber = randomNumber[i];
 			System.out.println("The player thinks it's a number - " + guessNumber);
 
+			if (guessNumber == targetNumber){
+				System.out.println("You to guess!");
+				break;
+			}
+
 			if (guessNumber < targetNumber) {
 				System.out.println("the number you entered is less than what the computer guessed");
 			} else {
 				System.out.println("the number you entered is greater than what the computer guessed");
 			}
 
-			if (guessNumber == targetNumber){
-				System.out.println("You to guess!");
-				break;
-			} else {
-				System.out.println("You need to try again");
-			}
+			System.out.println("You need to try again");
 		}
 	}
 }
