@@ -1,6 +1,5 @@
 public class GuessGame {
 	public static void main(String[] args) {
-		boolean playerisRight = false;
 		int targetNumber = 58;
 		int guessNumber = 0;
 
@@ -8,22 +7,15 @@ public class GuessGame {
 
 		for (int i = 0; i < randomNumber.length; i++) {
 			guessNumber = randomNumber[i];
+			System.out.println("The player thinks it's a number - " + guessNumber);
 
-			if(!playerisRight) {
-				System.out.println("The player thinks it's a number - " + guessNumber);
-				if (guessNumber > targetNumber) {
-					System.out.println("the number you entered is greater than what the computer guessed");
-				}
-				if (guessNumber < targetNumber) {
-					System.out.println("the number you entered is less than what the computer guessed");
-				}
+			if (guessNumber < targetNumber) {
+				System.out.println("the number you entered is less than what the computer guessed");
+			} else {
+				System.out.println("the number you entered is greater than what the computer guessed");
 			}
 
-			if (guessNumber == targetNumber) {
-				playerisRight = true;
-			}
-
-			if (playerisRight){
+			if (guessNumber == targetNumber){
 				System.out.println("You to guess!");
 				break;
 			} else {
@@ -32,11 +24,3 @@ public class GuessGame {
 		}
 	}
 }
-
-
-
-
-
-
-
-
