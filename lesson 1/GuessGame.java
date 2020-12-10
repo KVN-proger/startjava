@@ -9,7 +9,7 @@ public class GuessGame {
 			guessNumber = randomNumber[i];
 			System.out.println("The player thinks it's a number - " + guessNumber);
 
-			if (guessNumber == targetNumber){
+			if (guessNumber == targetNumber) {
 				System.out.println("You to guess!");
 				break;
 			}
