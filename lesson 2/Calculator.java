@@ -4,7 +4,6 @@ public class Calculator {
 	private char mathSign;
 	public int result;
 
-
 	public void setX(int x) {
 		this.x = x;
 	}
@@ -17,28 +16,34 @@ public class Calculator {
 		this.mathSign = mathSign;
 	}
 
-	public void calculation() {
+	public void count() {
 		switch (mathSign) {
-			case '+' : result = y + x;
-			System.out.println("sum " + y + " + " + x + " = " + result);
+			case '+' :
+				result = y + x;
+				System.out.println("sum " + y + " + " + x + " = " + result);
 				break;
-			case '-' : result = y - x;
-			System.out.println("subtraction " + y + " - " + x + " = " + result);
+			case '-' :
+				result = y - x;
+				System.out.println("subtraction " + y + " - " + x + " = " + result);
 				break;
-			case '*' : result = y * x;
-			System.out.println("multiplication " + y + " - " + x + " = " + result);
+			case '*' :
+				result = y * x;
+				System.out.println("multiplication " + y + " - " + x + " = " + result);
 				break;
-			case '/' : result = y / x;
-			System.out.println("div " + y + " - " + x + " = " + result);
+			case '/' :
+				result = y / x;
+				System.out.println("div " + y + " - " + x + " = " + result);
 				break;
-			case '^' : result = 1;
-			for (int a = 0; a < x; a++) {
+			case '^' :
+				result = 1;
+				for (int a = 0; a < x; a++) {
 					result *= y;
 				}
-			System.out.println("exponentiation " + x + " number " + y + " = " + result);
+				System.out.println("exponentiation " + x + " number " + y + " = " + result);
 				break;
-			case '%' : result = y % x;
-			System.out.println("remainder of division " + y + " % " + x + " = " + result);
+			case '%' :
+				result = y % x;
+				System.out.println("remainder of division " + y + " % " + x + " = " + result);
 				break;
 		}
 	}
