@@ -19,7 +19,6 @@ public class CalculatorTest {
 				System.out.println("do you want to continue calculating? yes/no");
 				confirmation = sc.next();
 			} while (!confirmation.equals("yes") && !confirmation.equals("no"));
-
 		} while (confirmation.equals("yes"));
 		System.out.println("goodbay");
 	}
