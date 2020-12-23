@@ -13,7 +13,7 @@ public class CalculatorTest {
 			calc.setMathSign(sc.next().charAt(0));
 			System.out.println("enter the second Number : 10");
 			calc.setY(sc.nextInt());
-			calc.count();
+			calc.calculate();
 
 			do {
 				System.out.println("do you want to continue calculating? yes/no");
