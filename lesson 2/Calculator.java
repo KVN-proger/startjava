@@ -16,7 +16,7 @@ public class Calculator {
 		this.mathSign = mathSign;
 	}
 
-	public void count() {
+	public void calculate() {
 		switch (mathSign) {
 			case '+' :
 				result = y + x;
