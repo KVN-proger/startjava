@@ -36,10 +36,10 @@ public class Calculator {
 				break;
 			case '^' :
 				result = 1;
-				for (int a = 0; a < x; a++) {
-					result *= y;
+				for (int a = 0; a < y; a++) {
+					result *= x;
 				}
-				System.out.println("exponentiation " + x + " number " + y + " = " + result);
+				System.out.println("exponentiation " + y + " number " + x + " = " + result);
 				break;
 			case '%' :
 				result = y % x;
