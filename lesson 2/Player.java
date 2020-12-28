@@ -1,12 +1,15 @@
 public class Player {
-	String name;
+	private String name;
 	private int number;
 
 	public Player(String name) {
 		this.name = name;
 	}
+	public Player(int number) {
+		this.number = number;
+	}
 
-	public void setNumber (int number) {
+	public void setNumber(int number) {
 		this.number = number;
 	}
 
@@ -14,7 +17,7 @@ public class Player {
 		return number;
 	}
 
-	public String representName(){
+	public String getName() {
 		return name;
 	}
 }
