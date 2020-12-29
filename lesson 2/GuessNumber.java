@@ -2,50 +2,42 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumber {
-	private String namePlayerOne;
-	private String namePlayerTwo;
-	private int scPlayerOne;
-	private int scPlayerTwo;
 	boolean isWin = false;
 	int guessNumber;
+	private String namePlOne;
+	private String namePlTwo;
 	Scanner sc = new Scanner(System.in);
-	Player plOne = new Player(scPlayerOne);
-	Player plTwo = new Player(scPlayerTwo);
+	Player plOne = new Player();
+	Player plTwo = new Player();
 	Random randomNumber = new Random();
+	public GuessNumber (String namePlOne, String namePlTwo) {
+		this.namePlOne = namePlOne;
+		this.namePlTwo = namePlTwo;
 
-	public void setNamePlayerOne(String namePlayerOne) {
-		this.namePlayerOne = namePlayerOne;
 	}
-
-	public void setNamePlayerTwo(String namePlayerTwo) {
-		this.namePlayerTwo = namePlayerTwo;
-	}
-
-	public void playGame() {
+	public void start() {
 		guessNumber = randomNumber.nextInt(100);
 		System.out.println("A random number is guessed - " + guessNumber);
 
 		do {
-			System.out.println("player " + namePlayerOne + " enter a number");
+			System.out.println("player " + namePlOne + " enter a number");
 			plOne.setNumber(sc.nextInt());
-			System.out.println("player " + namePlayerOne + " entered a number - " + plOne.getNumber());
+			System.out.println("player " + namePlOne + " entered a number - " + plOne.getNumber());
 			if (plOne.getNumber() == guessNumber) {
-				System.out.println("player " + namePlayerOne + " wins");
+				System.out.println("player " + namePlOne + " wins");
 				isWin = true;
 				break;
-			} else {
-				System.out.println("player " + namePlayerOne + " entered wrong number");
 			}
-			System.out.println("player " + namePlayerTwo + " enter a number");
+			System.out.println("player " + namePlOne + " entered wrong number");
+			System.out.println("player " + namePlTwo + " enter a number");
 			plTwo.setNumber(sc.nextInt());
-			System.out.println("player " + namePlayerTwo + " entered a number - " + plTwo.getNumber());
+			System.out.println("player " + namePlTwo + " entered a number - " + plTwo.getNumber());
 			if (plTwo.getNumber() == guessNumber) {
-				System.out.println("player " + namePlayerTwo + " wins");
+				System.out.println("player " + namePlTwo + " wins");
 				isWin = true;
 				break;
-			} else {
-				System.out.println("player " + namePlayerTwo + " entered wrong number");
 			}
-		} while (!isWin);
+			System.out.println("player " + namePlTwo + " entered wrong number");
+		} while (true);
 	}
 }
