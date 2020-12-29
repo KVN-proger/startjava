@@ -5,8 +5,12 @@ public class Player {
 	public Player(String name) {
 		this.name = name;
 	}
-	public Player(int number) {
-		this.number = number;
+
+	public Player() {
+	}
+
+	public String getName() {
+		return name;
 	}
 
 	public void setNumber(int number) {
@@ -17,7 +21,5 @@ public class Player {
 		return number;
 	}
 
-	public String getName() {
-		return name;
-	}
+
 }
