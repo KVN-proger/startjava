@@ -2,17 +2,15 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumber {
-	boolean isWin = false;
 	int guessNumber;
-	private String namePlOne;
-	private String namePlTwo;
 	Scanner sc = new Scanner(System.in);
-	Player plOne = new Player();
-	Player plTwo = new Player();
+	private Player plOne;
+	private Player plTwo;
 	Random randomNumber = new Random();
-	public GuessNumber (String namePlOne, String namePlTwo) {
-		this.namePlOne = namePlOne;
-		this.namePlTwo = namePlTwo;
+
+	public GuessNumber (Player plOne, Player plTwo) {
+		this.plOne = plOne;
+		this.plTwo = plTwo;
 
 	}
 	public void start() {
@@ -20,24 +18,22 @@ public class GuessNumber {
 		System.out.println("A random number is guessed - " + guessNumber);
 
 		do {
-			System.out.println("player " + namePlOne + " enter a number");
+			System.out.println("player " + plOne.getName() + " enter a number");
 			plOne.setNumber(sc.nextInt());
-			System.out.println("player " + namePlOne + " entered a number - " + plOne.getNumber());
+			System.out.println("player " + plOne.getName() + " entered a number - " + plOne.getNumber());
 			if (plOne.getNumber() == guessNumber) {
-				System.out.println("player " + namePlOne + " wins");
-				isWin = true;
+				System.out.println("player " + plOne.getName() + " wins");
 				break;
 			}
-			System.out.println("player " + namePlOne + " entered wrong number");
-			System.out.println("player " + namePlTwo + " enter a number");
+			System.out.println("player " + plOne.getName() + " entered wrong number");
+			System.out.println("player " + plTwo.getName() + " enter a number");
 			plTwo.setNumber(sc.nextInt());
-			System.out.println("player " + namePlTwo + " entered a number - " + plTwo.getNumber());
+			System.out.println("player " + plTwo.getName() + " entered a number - " + plTwo.getNumber());
 			if (plTwo.getNumber() == guessNumber) {
-				System.out.println("player " + namePlTwo + " wins");
-				isWin = true;
+				System.out.println("player " + plTwo.getName() + " wins");
 				break;
 			}
-			System.out.println("player " + namePlTwo + " entered wrong number");
+			System.out.println("player " + plTwo.getName() + " entered wrong number");
 		} while (true);
 	}
 }
