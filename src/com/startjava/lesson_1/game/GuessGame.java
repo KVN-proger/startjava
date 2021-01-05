@@ -1,3 +1,6 @@
+package com.startjava.lesson_1.game;
+
+
 public class GuessGame {
 	public static void main(String[] args) {
 		int targetNumber = 58;

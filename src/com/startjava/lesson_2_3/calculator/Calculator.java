@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.calculator;
+
 public class Calculator {
 	private int x;
 	private int y;
@@ -28,11 +30,11 @@ public class Calculator {
 				break;
 			case '*' :
 				result = y * x;
-				System.out.println("multiplication " + y + " - " + x + " = " + result);
+				System.out.println("multiplication " + y + " * " + x + " = " + result);
 				break;
 			case '/' :
 				result = y / x;
-				System.out.println("div " + y + " - " + x + " = " + result);
+				System.out.println("div " + y + " / " + x + " = " + result);
 				break;
 			case '^' :
 				result = 1;
