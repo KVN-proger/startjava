@@ -1,5 +1,7 @@
 package com.startjava.lesson_2_3_4.calculator;
 
+import static java.lang.Math.*;
+
 public class Calculator {
 	private int x;
 	private int y;
@@ -21,16 +23,16 @@ public class Calculator {
 	public void calculate() {
 		switch (mathSign) {
 			case '+' :
-				result = y + x;
-				System.out.println("sum " + y + " + " + x + " = " + result);
+				result = addExact(x, y);
+				System.out.println("sum " + x + " + " + y + " = " + result);
 				break;
 			case '-' :
-				result = y - x;
-				System.out.println("subtraction " + y + " - " + x + " = " + result);
+				result = subtractExact(x, y);
+				System.out.println("subtraction " + x + " - " + y + " = " + result);
 				break;
 			case '*' :
-				result = y * x;
-				System.out.println("multiplication " + y + " * " + x + " = " + result);
+				result = multiplyExact(x, y);
+				System.out.println("multiplication " + x + " * " + y + " = " + result);
 				break;
 			case '/' :
 				result = y / x;

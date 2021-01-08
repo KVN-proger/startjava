@@ -7,14 +7,20 @@ public class CalculatorTest {
 		String confirmation;
 		Calculator calc = new Calculator();
 		Scanner sc = new Scanner(System.in);
+		String str;
 
 		do {
-			System.out.println("enter the first number : 2");
-			calc.setX(sc.nextInt());
-			System.out.println("enter math Sign : ^");
-			calc.setMathSign(sc.next().charAt(0));
-			System.out.println("enter the second Number : 10");
-			calc.setY(sc.nextInt());
+			System.out.println("enter a mathematical expression : 2 ^ 10");
+			str = (sc.nextLine());
+			String[] mathStatement = str.split(" ");
+
+			while (mathStatement[0].equals("")) {
+				str = (sc.nextLine());
+				mathStatement = str.split(" ");
+			}
+			calc.setX(Integer.parseInt(mathStatement[0]));
+			calc.setMathSign(mathStatement[1].charAt(0));
+			calc.setY(Integer.parseInt(mathStatement[2]));
 			calc.calculate();
 
 			do {
