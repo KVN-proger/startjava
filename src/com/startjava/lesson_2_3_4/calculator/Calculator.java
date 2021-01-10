@@ -8,24 +8,17 @@ public class Calculator {
 	private char mathSign;
 	private String mathStatement;
 	public int result;
-	
+
 	public Calculator(String mathStatement) {
 		this.mathStatement = mathStatement;
-	}
-	public String getMathStatement() {
-		return mathStatement;
-	}
-
-	public void setX(int x) {
-		this.x = x;
+		String[] mathArray = mathStatement.split(" ");
+		x = Integer.parseInt(mathArray[0]);
+		mathSign = mathArray[1].charAt(0);
+		y = Integer.parseInt(mathArray[2]);
 	}
 
 	public int getX() {
 		return x;
-	}
-
-	public void setMathSign(char mathSign) {
-		this.mathSign = mathSign;
 	}
 
 	public char getMathSign() {
@@ -34,10 +27,6 @@ public class Calculator {
 
 	public int getY() {
 		return y;
-	}
-
-	public void setY(int y) {
-		this.y = y;
 	}
 
 	public int calculate() {
