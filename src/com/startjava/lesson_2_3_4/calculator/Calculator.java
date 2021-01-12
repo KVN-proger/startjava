@@ -17,18 +17,6 @@ public class Calculator {
 		y = Integer.parseInt(mathArray[2]);
 	}
 
-	public int getX() {
-		return x;
-	}
-
-	public char getMathSign() {
-		return mathSign;
-	}
-
-	public int getY() {
-		return y;
-	}
-
 	public int calculate() {
 		switch (mathSign) {
 			case '+':
@@ -52,7 +40,15 @@ public class Calculator {
 			case '%':
 				result = x % y;
 				break;
-		}
+			}
 		return result;
+	}
+
+	public void verifyMathSign() {
+		if (mathSign == '+' || mathSign == '-' || mathSign == '*' || mathSign == '/' || mathSign == '%') {
+			System.out.print(x + " " + mathSign + " " + y + " = ");
+		} else if (mathSign == '^') {
+			System.out.print("exponentiation " + y + " number " + x + " = ");
+		}
 	}
 }
