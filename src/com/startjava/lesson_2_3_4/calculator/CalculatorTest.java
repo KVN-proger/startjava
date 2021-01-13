@@ -10,7 +10,6 @@ public class CalculatorTest {
 		do {
 			System.out.println("enter a mathematical expression : 2 ^ 10");
 			Calculator calc = new Calculator(sc.nextLine());
-			calc.verifyMathSign();
 			System.out.println(calc.calculate());
 			do {
 				System.out.println("do you want to continue calculating? yes/no");

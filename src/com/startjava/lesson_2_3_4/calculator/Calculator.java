@@ -6,42 +6,31 @@ public class Calculator {
 	private int x;
 	private int y;
 	private char mathSign;
-	private String mathStatement;
-	public int result;
 
-	public Calculator(String mathStatement) {
-		this.mathStatement = mathStatement;
-		String[] mathArray = mathStatement.split(" ");
-		x = Integer.parseInt(mathArray[0]);
-		mathSign = mathArray[1].charAt(0);
-		y = Integer.parseInt(mathArray[2]);
+	public Calculator(String mathExpression) {
+		String[] splitMathExpression = mathExpression.split(" ");
+		x = Integer.parseInt(splitMathExpression[0]);
+		mathSign = splitMathExpression[1].charAt(0);
+		y = Integer.parseInt(splitMathExpression[2]);
 	}
 
 	public int calculate() {
+		verifyMathSign();
 		switch (mathSign) {
 			case '+':
-				result = addExact(x, y);
-				break;
+				return addExact(x, y);
 			case '-':
-				result = subtractExact(x, y);
-				break;
+				return subtractExact(x, y);
 			case '*':
-				result = multiplyExact(x, y);
-				break;
+				return multiplyExact(x, y);
 			case '/':
-				result = x / y;
-				break;
+				return x / y;
 			case '^':
-				result = 1;
-				for (int a = 0; a < y; a++) {
-					result *= x;
-				}
-				break;
+				return (int) pow(x, y);
 			case '%':
-				result = x % y;
-				break;
+				return x % y;
 			}
-		return result;
+		return 0;
 	}
 
 	public void verifyMathSign() {
