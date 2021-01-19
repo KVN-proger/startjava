@@ -18,7 +18,9 @@ public class GuessNumber {
 	}
 
 	public void start() {
-		int i = 0;
+		i = 0;
+		plOne.setAttempts(i);
+		plTwo.setAttempts(i);
 		guessNumber = randomNumber.nextInt(100);
 		System.out.println("A random number is guessed - " + guessNumber);
 
@@ -37,6 +39,8 @@ public class GuessNumber {
 				break;
 			}
 		}
+		plOne.fillEnteredNumbersNull();
+		plTwo.fillEnteredNumbersNull();
 	}
 
 	public boolean comapreNumber(Player player) {
