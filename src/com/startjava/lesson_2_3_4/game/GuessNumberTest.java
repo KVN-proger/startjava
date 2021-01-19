@@ -16,10 +16,6 @@ public class GuessNumberTest {
 
 		do {
 			game.start();
-			int [] playerOneNumbers = Arrays.copyOf(playerOne.getNumbersPlayer(), playerOne.getAttempts());
-			int [] playerTwoNumbers = Arrays.copyOf(playerTwo.getNumbersPlayer(), playerTwo.getAttempts());
-			System.out.println("player " + playerOne.getName() + " entered numbers - " + Arrays.toString(playerOneNumbers));
-			System.out.println("player " + playerTwo.getName() + " entered numbers - " + Arrays.toString(playerTwoNumbers));
 
 			do {
 				System.out.println("do you want to continue yes/no");
