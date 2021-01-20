@@ -19,8 +19,8 @@ public class GuessNumber {
 
 	public void start() {
 		i = 0;
-		plOne.setAttempts(i);
-		plTwo.setAttempts(i);
+		plOne.setAttempt(i);
+		plTwo.setAttempt(i);
 		guessNumber = randomNumber.nextInt(100);
 		System.out.println("A random number is guessed - " + guessNumber);
 
@@ -62,9 +62,8 @@ public class GuessNumber {
 	public boolean gamePlayer(int i, Player player) {
 		if (i <= 10) {
 			System.out.println("player " + player.getName() + " enter a number");
-			player.setNumber(sc.nextInt());
-			player.setAttempts(i);
-			player.setEnteredNumbers(player.getNumber());
+			player.setAttempt(i);
+			player.setEnteredNumber(sc.nextInt());
 		}
 		
 		if (i > 10) {
@@ -77,6 +76,7 @@ public class GuessNumber {
 			return true;
 		}
 	}
+
 	public void outputEnteredNumbers(Player player) {
 		System.out.print("player " + player.getName() + " entered numbers - ");
 		int [] enteredNumbers = Arrays.copyOf(player.getEnteredNumbers(), player.getAttempts());
