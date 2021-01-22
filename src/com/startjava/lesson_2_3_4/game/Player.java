@@ -15,13 +15,8 @@ public class Player {
 		return name;
 	}
 
-	public int getNumber() {
-		int number = 0;
-		for (int i: enteredNumbers) {
-			i = enteredNumbers[attempts - 1];
-			number = i;
-		}
-		return number;
+	public int getLastNumber() {
+		return enteredNumbers[attempts - 1];
 	}
 
 	public int[] getEnteredNumbers() {
@@ -32,7 +27,7 @@ public class Player {
 		enteredNumbers[attempts - 1] = number;
 	}
 
-	public void fillEnteredNumbersNull() {
+	public void clearEnteredNumbers() {
 		Arrays.fill(enteredNumbers, 0, attempts, 0);
 	}
 
