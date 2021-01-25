@@ -9,7 +9,7 @@ public class GuessNumber {
 	private Player plOne;
 	private Player plTwo;
 	Random randomNumber = new Random();
-	int loopCounter;
+	int quantityAttempts;
 
 	public GuessNumber(Player plOne, Player plTwo) {
 		this.plOne = plOne;
@@ -17,18 +17,22 @@ public class GuessNumber {
 	}
 
 	public void start() {
-		loopCounter = 0;
-		plOne.setAttempt(loopCounter);
-		plTwo.setAttempt(loopCounter);
+		quantityAttempts = 0;
+		plOne.setAttempt(quantityAttempts);
+		plTwo.setAttempt(quantityAttempts);
 		guessNumber = randomNumber.nextInt(100);
 		System.out.println("A random number is guessed - " + guessNumber);
 
 		while(true) {
-			loopCounter++;
-			if (validationAttemptsPlayer(loopCounter, plOne) && validationAttemptsPlayer(loopCounter, plTwo)) {
+			quantityAttempts++;
+			if (checkAttemptsOutputCompareNumber(quantityAttempts, plOne)) {
 				if (plOne.getAttempts() == 10) {
 					System.out.println("player " + plOne.getName() + " has run out of attempts");
 				}
+			} else {
+				break;
+			}
+			if 	(checkAttemptsOutputCompareNumber(quantityAttempts, plTwo)) {
 				if (plTwo.getAttempts() == 10) {
 					System.out.println("player " + plTwo.getName() + " has run out of attempts");
 				}
@@ -42,18 +46,19 @@ public class GuessNumber {
 		plTwo.clearEnteredNumbers();
 	}
 
-	private boolean validationAttemptsPlayer(int loopCounter, Player player) {
-		if (loopCounter <= 10) {
+	private boolean checkAttemptsOutputCompareNumber(int quantityAttempts, Player player) {
+		if (quantityAttempts <= 10) {
 			System.out.println("player " + player.getName() + " enter a number");
-			player.setAttempt(loopCounter);
+			player.setAttempt(quantityAttempts);
 			player.setEnteredNumber(sc.nextInt());
 		}
 
-		boolean comapreNumber = ((loopCounter > 10) || (comapreNumber(player))) ? false : true;
-		return comapreNumber;
+		boolean compareNumber = ((quantityAttempts > 10) || (compareNumber(player))) ?
+			false : true;
+		return compareNumber;
 	}
 
-	private boolean comapreNumber(Player player) {
+	private boolean compareNumber(Player player) {
 		if (player.getLastNumber() == guessNumber) {
 			System.out.println("player " + player.getName() + " wins");
 			System.out.println("player " + player.getName() + " guessed the number " + guessNumber + " on attempt " + player.getAttempts());
@@ -61,15 +66,16 @@ public class GuessNumber {
 		}
 		System.out.println("player " + player.getName() + " entered wrong number");
 
-		String messageComapreNumber = (player.getLastNumber() < guessNumber) ? "the number that player " + player.getName() + " entered is less than what the computer guessed" :
-				"the number that player " + player.getName() + " entered is greater than what the computer guessed";
-		System.out.println(messageComapreNumber);
+		String messageCompareNumber = (player.getLastNumber() < guessNumber) ?
+			"the number that player " + player.getName() + " entered is less than what the computer guessed" :
+			"the number that player " + player.getName() + " entered is greater than what the computer guessed";
+		System.out.println(messageCompareNumber);
 		return false;
 	}
 
 	private void outputEnteredNumbers(Player player) {
 		System.out.print("player " + player.getName() + " entered numbers - ");
-		int [] enteredNumbers = player.getEnteredNumbers();
+		int[] enteredNumbers = player.getEnteredNumbers();
 		for (int number : enteredNumbers) {
 			System.out.print(number + " ");
 		}
