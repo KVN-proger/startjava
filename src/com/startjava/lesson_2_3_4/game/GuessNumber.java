@@ -17,19 +17,24 @@ public class GuessNumber {
 	}
 
 	public void start() {
-		guessNumber = randomNumber.nextInt(101);
+		guessNumber = randomNumber.nextInt(100);
 		System.out.println("A random number is guessed - " + guessNumber);
 
 		while(true) {
 			quantityAttempts++;
 			if (makeMove(plOne)) {
-			} else {
+				break;
+			}
+			if (compareNumber(plOne)) {
 				break;
 			}
 			if (makeMove(plTwo)) {
-			} else {
 				break;
 			}
+			if (compareNumber(plTwo)) {
+				break;
+			}
+
 		}
 		outputEnteredNumbers(plOne);
 		outputEnteredNumbers(plTwo);
@@ -41,24 +46,20 @@ public class GuessNumber {
 	}
 
 	private boolean makeMove(Player player) {
-		if (quantityAttempts <= 10) {
+		if (player.getAttempts() < 10) {
 			enterNumber(player);
-		} else {
+			if (player.getAttempts() == 10) {
+				System.out.println("player " + player.getName() + " has run out of attempts");
+			}
 			return false;
-		}
-		if (compareNumber(player)) {
-			return false;
-		}
-		if (player.getAttempts() == 10) {
-			System.out.println("player " + player.getName() + " has run out of attempts");
 		}
 		return true;
 	}
 
 	private void enterNumber(Player player) {
 		System.out.println("player " + player.getName() + " enter a number");
-		player.setEnteredNumber(sc.nextInt());
 		player.setAttempt(quantityAttempts);
+		player.setEnteredNumber(sc.nextInt());
 	}
 
 	private boolean compareNumber(Player player) {
